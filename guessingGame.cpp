@@ -10,8 +10,20 @@ using namespace std;
 int main(){
     fstream file;
     file.open("words.txt", ios::in);
+    cout << "Please enter a word to play:";
+    int choice;
+    bool valid = false;
+    
+    while(!valid){
+        cin >> choice;
+        if(choice >=1 && choice <= 20){
+            valid = true;
+        }
+    }
+
+    string word;
     bool atWord = false;
-    int  wordNum= 0;
+    int  wordNum= 1;
 
     while(!atWord){
         file >> word;
@@ -20,4 +32,5 @@ int main(){
         }
         wordNum++;
     }
+    cout << word;
 }
