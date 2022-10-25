@@ -18,17 +18,13 @@ int main(){
         cin >> choice;
         if(choice >=0 && choice <= 20){
             valid = true;
-        }
-        else if(choice ==0){
-        choice = rand() % 20 + 1;
-        }
-        else
-        {
+        }else{
             cout << "Error. Please enter a number between 0  and 20: ";
         }
     }
-    
-
+    if (choice == 0){
+        choice = rand() % 20+1;
+    }
     string word;
     bool atWord = false;
     int  wordNum= 1;
@@ -40,5 +36,7 @@ int main(){
         }
         wordNum++;
     }
+    string blanks = word;
+    for(char & c : blanks)
     cout << word;
 }
