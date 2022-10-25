@@ -37,6 +37,24 @@ int main(){
         wordNum++;
     }
     string blanks = word;
-    for(char & c : blanks)
-    cout << word;
+    for(char & c : blanks){
+        c = '_';
+    }
+    bool gameOver = false;
+    while(!gameOver){
+        cout << "The word is "<<blanks<<endl;
+        cout << "Please enter a letter to guess: ";
+        char letter;
+        cin >> letter;
+        
+        int i = 0;
+        for(char c: word){
+            if(letter = c){
+                blanks[i]= letter;
+            }
+            i++;
+        }
+        if()
+    }
+    cout << word<< " " << blanks;
 }
