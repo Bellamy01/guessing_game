@@ -11,18 +11,15 @@ using namespace std;
 int main(){
     fstream file;
     char play = 'n';
-    file.open("words.txt", ios::in);
     start:
-    cout << "GUESSING GAME"<<endl<<endl;
-    fstream file;
-    string word;
-    int category;
-    cout << "Category" << endl;
-    cout << "1. Animals" << endl
-         << "2. Teams" << endl
-         << "3. Districts" << endl
-         << "4. Films" << endl
-         << "5. Books" << endl;
+    cout <<endl<< "GUESSING GAME"<<endl<<endl;
+        int category;
+        cout << "Category" << endl;
+        cout << "1. Animals" << endl
+             << "2. Teams" << endl
+             << "3. Districts" << endl
+             << "4. Films" << endl
+             << "5. Books" << endl;
     cat:
         cout << "Please select a category: ";
         cin >> category;
@@ -50,29 +47,21 @@ int main(){
         {
             cout << "Please select a valid number" << endl;
             goto cat;
+            if(category == 0){
+                cout << "Terminating program..."<<endl;
+            }
+            if(!file){
+                cout << "File not found!" << endl;
+            }
         }
-        srand(time(0));
-        random_number = (rand())
-        cout
-                        << "Please enter a word to play(0 for random): ";
         int choice;
         bool valid = false;
 
         while (!valid)
         {
-            cin >> choice;
-            if (choice >= 0 && choice <= 20)
-            {
-                valid = true;
-            }
-            else
-            {
-                cout << "Error. Please enter a number between 0  and 20: ";
-            }
-        }
-        if (choice == 0)
-        {
-            choice = rand() % 20 + 1;
+            srand(time(0));
+            choice = (rand() % 50) + 1;
+            valid = true;
         }
         string word;
         bool atWord = false;
@@ -139,14 +128,6 @@ int main(){
             }
         }
         cout << "Would you like to continue playing? (y/n): ";
-        cin >> play;
-        if (play == 'y')
-        {
-            goto start;
-        }
-        else
-        {
-            cout << endl
-                 << "Thanks for playing!" << endl;
-        }
+        char playagain;
+        cin >> playagain;
 }
