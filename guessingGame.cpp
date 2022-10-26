@@ -10,8 +10,9 @@ using namespace std;
 
 int main(){
     fstream file;
-    char play = 'n';
-    start:
+    bool keepPlaying = true;
+    while(keepPlaying){
+
     cout <<endl<< "GUESSING GAME"<<endl<<endl;
         int category;
         cout << "Category" << endl;
@@ -81,7 +82,7 @@ int main(){
         {
             c = '_';
         }
-        int guesses = 3;
+        int guesses = 7;
         bool gameOver = false;
         while (!gameOver)
         {
@@ -130,4 +131,9 @@ int main(){
         cout << "Would you like to continue playing? (y/n): ";
         char playagain;
         cin >> playagain;
+        if(playagain == 'n'){
+            keepPlaying = false;
+            cout << "Farewell , kind spirit." << endl<< endl<<"Thank you for playing." << endl;
+        }
+    }
 }
