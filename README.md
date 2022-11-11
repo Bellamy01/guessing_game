@@ -16,8 +16,8 @@ The game has five categories in .txt files:
 
 # Steps
 
-1.Select the category
-2.Guess the word by inputing the desirable letter
+1.Select the category<br>
+2.Guess the word by inputing the desirable letter<br>
 3.Terminate using 0 or Ctr+c
 
 # Any errors were removed
